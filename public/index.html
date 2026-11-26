@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseChat — Real-Time Local Messenger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-wrapper">
+    <!-- Header -->
+    <header class="chat-header">
+      <div>
+        <h1>PulseChat</h1>
+        <span class="status-dot"></span>
+        <span id="online-count" class="online-text">1 User Online</span>
+      </div>
+      <div class="user-badge">
+        <input type="text" id="username-input" placeholder="Your Name" maxlength="15">
+      </div>
+    </header>
+
+    <!-- Messages Display Area -->
+    <main id="chat-box" class="chat-box">
+      <div class="system-msg">Connected to local server. Open another tab to test live chat!</div>
+    </main>
+
+    <!-- Typing Indicator -->
+    <div id="typing-indicator" class="typing-indicator"></div>
+
+    <!-- Message Input Form -->
+    <form id="chat-form" class="chat-form">
+      <input type="text" id="msg-input" placeholder="Type a message..." autocomplete="off" required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <!-- Socket.io Client Library (auto-served by Node server) -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
